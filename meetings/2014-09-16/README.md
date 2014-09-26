@@ -2,11 +2,11 @@
 
 1. 以班级为核心进行管理：
 
-    > * 创建班级页面新增入学年份，Grade表示该班级的初始年级，随时间自动更新（每年9月份）
-    > * 班级列表页面隐藏过期的班级（Grade > maximal offered grade of school)；实现排序、filter(optional)；新增列学生人数列，去掉Term列
+    > * 创建班级页面新增入学年份，Grade表示该班级的初始年级，随时间自动更新（每年9月份）(*Status: 80%*)
+    > * 班级列表页面隐藏过期的班级（Grade > maximal offered grade of school)；实现排序、filter(optional)；新增列学生人数列，去掉Term列 (*Status: 80%*)
     > * Enroll Students页面新增按钮从csv导入，整体将新增学生的功能放到其下（csv导入，批量填写（姓、名、学号、家长姓名与电话、性别、所在区、所在市（默认学校注册的市）），单项填写）
     > * 班级列表页面、学生列表页面可打印
-    > * 学生不设独立用户名，令用户名=roll number
+    > * 学生不设独立用户名，令用户名=roll number (*Status: 80%*)
     > * (Optional)搜索学生功能
 
 2. 教师页：
@@ -19,3 +19,12 @@
 
     > * 创建课程页：去除Period与Room两项，显示顺序调整为：Term, Course, Teacher, Units(Multiple)
     > * Course简化：只记录科目（Prepopulated）；Term只显示下两个学期
+
+4. Extra Fixes:
+
+    > * i18n not working properly on certain pages: unit/list, student/list
+    > * Same student might be enrolled in the same unit multiple times.
+
+# Remmaining Issues #
+
+1. Student login might be complex because username=roll number but students from different schools can have the same roll number. So username should be a function of (school, roll number in that school)
